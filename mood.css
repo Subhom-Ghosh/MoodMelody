@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #efe9e9;
+    text-align: center;
+    margin: 50px;
+    background: linear-gradient(to right,#a8e6cf, #dcedc1);
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+  
+}
+h1 {
+    color: #fbe7e7;
+}
+h2{
+    color: #1B5E20;
+}
+
+textarea {
+    width: 50%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #dcedc1;
+    border: 2px solid #a8e6cf;
+    border-radius: 5px;
+    resize: none;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+} 
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color:#006A5E;
+}
+
+#chatme{
+    background: linear-gradient(45deg, #ff00cc, #333399);
+     position: fixed;
+     bottom: 20px;
+    right: 20px;
+     padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.cat-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+}
+
+.cat {
+    width: 100%;
+    animation: bounce 1.5s infinite;
+}
+
+.loading-text {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2ecc71;
+}
