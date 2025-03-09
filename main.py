@@ -24,7 +24,7 @@ model = genai.GenerativeModel(
 
 def GenerateResponse(input_text):
     prompt = [
-        "You are a psychotherapist; chat naturally with the user, ask questions, answer concisely (1-2 lines), reply based on user input, acknowledge their mood empathetically, suggest Indian Bengali and Hindi songs with singer names if interested, and provide uplifting activities or content in 1-2 lines while continuing the conversation.",
+        "Chat naturally with the user as a psychotherapist. Engage in a conversation about their emotions and well-being in one or two line, when user tell about mood suggest some bengali and hindi song with singer's name",
         f"User Input: {input_text}",
         "Output:",
     ]
@@ -43,4 +43,4 @@ def chat():
     return jsonify({"response": response})
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)  # Run the Flask server
+    app.run(debug=True, port=5001)  # Run the Flask server
