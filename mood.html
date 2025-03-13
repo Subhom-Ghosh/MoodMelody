@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Detector</title>
+    <link rel="stylesheet" href="mood.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Mood Detector 🎭</h1>
+      <h2>Express Your Thoughts</h2>
+      <textarea id="textInput" placeholder="Type your thoughts here..."></textarea>
+      <br />
+      <button onclick="analyzeMood()">Analyze Mood</button>
+      <h3>Result:</h3>
+      <p id="result"></p>
+
+      <div class="button-group">
+        <button id="chatme">Chat with Me 💬</button>
+        <button id="song">Energize Yourself 🎵</button>
+      </div>
+    </div>
+    <div class="bubbles">
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+      <span class="bubble"></span>
+    </div>  
+
+    <script src="mood.js"></script>
+  </body>
+</html>
