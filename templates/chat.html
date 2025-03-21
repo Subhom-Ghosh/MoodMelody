@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
+     <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <h5 class="text-center">MoodMelody</h5>
+    <div class="chat-box p-2" id="chat-box"></div>
+
+    <div class="input-group">
+        <input type="text" id="user-input" class="form-control" placeholder="Type a message...">
+        <button class="btn btn-primary" onclick="sendMessage()">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+        
+    </div>
+</div>
+
+<script src="chat.js">
+    document.getElementById("user-input").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    function sendMessage() {
+        let userInputField = document.getElementById("user-input");
+        let userInput = userInputField.value.trim();
+        if (userInput === "") return;
+
+        let chatBox = document.getElementById("chat-box");
+
+        // Display user message
+        let userMessage = document.createElement("div");
+        userMessage.className = "message user-msg";
+        userMessage.textContent = userInput;
+        chatBox.appendChild(userMessage);
+
+        userInputField.value = ""; // Clear input
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+        // Send request to backend
+        fetch("http://127.0.0.1:5000/chat", {  
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: userInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            let botMessage = document.createElement("div");
+            botMessage.className = "message bot-msg";
+            botMessage.textContent = data.response;
+            chatBox.appendChild(botMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            let errorMessage = document.createElement("div");
+            errorMessage.className = "message bot-msg";
+            errorMessage.textContent = "⚠️ Error: Could not connect to chatbot.";
+            chatBox.appendChild(errorMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        });
+    }
+</script>
+
+</body>
+</html>

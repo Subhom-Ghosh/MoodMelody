@@ -1,0 +1,1 @@
+,"color":"#D8BFD8","fontColor":"#1F3A5F"

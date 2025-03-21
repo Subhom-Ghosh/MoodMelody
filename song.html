@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoodMelody - Mood-Based Music</title>
+    <link rel="stylesheet" href="song.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>🎵 MoodMelody 🎶</h1>
+        <p class="subtitle">Let the music match your mood</p>
+        <label for="mood">Select Your Mood:</label>
+        <select id="mood">
+            <option value="" disabled selected>Choose Mood</option>
+            <option value="happy">Happy 😊</option>
+            <option value="love">Love ❤️</option>
+            <option value="romantic">Romantic 💕</option>
+            <option value="sad">Sad 😢</option>
+            <option value="energetic">Energetic 🔥</option>
+            <option value="relaxed">Relaxed 🌿</option>
+        </select>
+        <button onclick="playMusic()">🎶 Play Song</button>
+        <div id="song-link" style="display: none;">
+            <p>Click below to listen:</p>
+            <a id="spotify-link" href="#" target="_blank">🎵 Open Song</a>
+        </div>
+    </div>
+    <script src="song.js"></script>
+</body>
+</html>
